@@ -14,3 +14,8 @@ function init() {
 
 // function call to initialize program
 init();
+
+//create prompts for user
+//function that returns a string
+// pass it over through fs.writefile
+// video capture you interacting with it
