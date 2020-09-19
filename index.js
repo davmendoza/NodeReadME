@@ -1,7 +1,9 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const axios = require('axios');
-const generate = require('./utils/generateMarkdown')
+const generate = require('./utils/generateMarkdown');
+
+
 
 // array of questions for user
 
@@ -61,6 +63,13 @@ const questions = [
         message: 'What is your email?'
 
     },
+    {
+
+        type: 'input',
+        name: 'repo',
+        message: 'Input the link to the github repo'
+    
+    },
 
 
 ];
@@ -70,14 +79,15 @@ inquirer
     .then(function(data) {
         const queryUrl = `https://api.github.com/users/${data.username}`;
 
-        axios.get(queryUrl)
+        axios
+        .get(queryUrl)
         .then(function (res) {  
             const usersGithubInfo = {
-                name: res.data
+                name: res.data.name
             };
         })
 
-        fs.writeFile('./utils/generateMarkdown.js' , )
+        //fs.writeFile( , )
 
 
 
